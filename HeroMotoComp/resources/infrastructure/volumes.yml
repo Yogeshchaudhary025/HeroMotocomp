@@ -1,0 +1,10 @@
+resources:
+  volumes:
+    bronze_raw_volume:
+      name: bike_data
+      catalog_name: ${var.catalog}
+      schema_name: raw
+      comment: "Raw ingestion volume"
+      grants:
+        - principal: yogesh025yc@gmail.com
+          privileges: [ALL_PRIVILEGES]
