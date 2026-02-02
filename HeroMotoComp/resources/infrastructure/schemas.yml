@@ -1,0 +1,33 @@
+resources:
+  schemas:
+    bronze_schema:
+      name: bronze
+      catalog_name: ${var.catalog}
+      comment: "Bronze layer"
+      grants:
+        - principal: yogesh025yc@gmail.com
+          privileges: [ALL_PRIVILEGES]
+
+    silver_schema:
+      name: silver
+      catalog_name: ${var.catalog}
+      comment: "Silver layer"
+      grants:
+        - principal: yogesh025yc@gmail.com
+          privileges: [ALL_PRIVILEGES]
+
+    gold_schema:
+      name: gold
+      catalog_name: ${var.catalog}
+      comment: "Gold layer"
+      grants:
+        - principal: yogesh025yc@gmail.com
+          privileges: [ALL_PRIVILEGES]
+
+    raw_schema:
+      name: raw
+      catalog_name: ${var.catalog}
+      comment: "Raw layer"
+      grants:
+        - principal: yogesh025yc@gmail.com
+          privileges: [ALL_PRIVILEGES]
