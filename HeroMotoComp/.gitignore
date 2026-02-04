@@ -3,7 +3,7 @@ build/
 dist/
 __pycache__/
 *.egg-info
-.venv/
+.venv312/
 scratch/**
 !scratch/README.md
 **/explorations/**
