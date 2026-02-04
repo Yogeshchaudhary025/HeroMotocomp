@@ -58,7 +58,7 @@ targets:
       source_linked_deployment : false
     mode: production
     workspace:
-      host: http://127.0.0.1:7073
+      host: https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
       # We explicitly deploy to /Workspace/Users/yogesh025yc@gmail.com to make sure we only have a single copy.
       root_path: /Workspace/Shared/${var.env_directory}/HeroMotocomp/${bundle.name}
     variables :
