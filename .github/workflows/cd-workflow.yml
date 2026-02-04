@@ -28,9 +28,9 @@ jobs:
           cat <<EOF > ~/.databrickscfg
           [TEST]
           host = https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
-          account_id = ${{ secrets.TEST_ACCOUNT_ID }}
-          client_id = ${{ secrets.TEST_CLIENT_ID }}
-          client_secret = ${{ secrets.TEST_CLIENT_SECRET }}
+          account_id = ${{ secrets.ACCOUNT_ID }}
+          client_id = ${{ secrets.CLIENT_ID }}
+          client_secret = ${{ secrets.CLIENT_SECRET }}
           EOF
 
       - name: Deploy to TEST
@@ -57,9 +57,9 @@ jobs:
           cat <<EOF > ~/.databrickscfg
           [PROD]
           host = https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
-          account_id = ${{ secrets.PROD_ACCOUNT_ID }}
-          client_id = ${{ secrets.PROD_CLIENT_ID }}
-          client_secret = ${{ secrets.PROD_CLIENT_SECRET }}
+          account_id = ${{ secrets.ACCOUNT_ID }}
+          client_id = ${{ secrets.CLIENT_ID }}
+          client_secret = ${{ secrets.CLIENT_SECRET }}
           EOF
 
       - name: Deploy to PROD
