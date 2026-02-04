@@ -3,7 +3,14 @@ resources:
     HeroMotocomp_Daily_Status:
       name: HeroMotocomp_Daily_Status
       tasks:
+        - task_key: Python_Wheel
+          python_wheel_task:
+            package_name: HeroMotoComp
+            entry_point: main
+          environment_key: Default
         - task_key: Bike_Data_Ingestion
+          depends_on:
+            - task_key: Python_Wheel
           notebook_task:
             notebook_path: ../../notebooks/bronze/hero_ingestion.ipynb
             base_parameters:
