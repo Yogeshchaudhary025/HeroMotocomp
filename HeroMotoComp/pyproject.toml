@@ -15,6 +15,10 @@ dev = [
     "ipykernel",
 ]
 
+
+[project.scripts]
+main = "heromotocomp.main:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
