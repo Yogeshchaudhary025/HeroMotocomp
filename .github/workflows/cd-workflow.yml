@@ -35,6 +35,7 @@ jobs:
 
       - name: Deploy to TEST
         run: |
+          cd HeroMotoComp
           databricks bundle deploy \
             --target test \
             --profile TEST
@@ -64,6 +65,7 @@ jobs:
 
       - name: Deploy to PROD
         run: |
+          cd HeroMotoComp
           databricks bundle deploy \
             --target prod \
             --profile PROD
