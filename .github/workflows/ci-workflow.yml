@@ -9,23 +9,28 @@ jobs:
   ci_job:
     name: CI Job
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
 
-          
-      - name: Install dependencies + pytest-html
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements-pyspark.txt
+      - name: Install Databricks CLI
+        uses: databricks/setup-cli@main
 
-      - name: Validate Changes
+      - name: Configure Databricks
         run: |
+          # write out the profile (here called "DEV")
+          cat <<EOF > ~/.databrickscfg
+          [DEV]
+          host = https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
+          account_id = ${{ secrets.ACCOUNT_ID }}
+          client_id = ${{ secrets.CLIENT_ID }}
+          client_secret = ${{ secrets.CLIENT_SECRET }}
+          EOF
+
+      - name: Validate DAB
+        run: |
+          cd HeroMotoComp
           databricks bundle validate \
             --target dev \
             --profile DEV
