@@ -1,5 +1,5 @@
 [project]
-name = "HeroMotoComp"
+name = "heromotocomp"
 version = "0.0.1"
 authors = [{ name = "yogesh025yc@gmail.com" }]
 requires-python = ">=3.10,<3.13"

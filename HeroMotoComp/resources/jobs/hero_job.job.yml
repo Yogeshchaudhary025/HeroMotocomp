@@ -3,14 +3,7 @@ resources:
     HeroMotocomp_Daily_Status:
       name: HeroMotocomp_Daily_Status
       tasks:
-        - task_key: Python_Wheel
-          python_wheel_task:
-            package_name: HeroMotoComp
-            entry_point: main
-          environment_key: Default
         - task_key: Bike_Data_Ingestion
-          depends_on:
-            - task_key: Python_Wheel
           notebook_task:
             notebook_path: ../../notebooks/bronze/hero_ingestion.ipynb
             base_parameters:
@@ -30,6 +23,7 @@ resources:
               task_id: "{{task.run_id}}"
               processed_timestamp: "{{job.start_time.iso_datetime}}"
             source: WORKSPACE
+          environment_key: Python_Wheel_environment
         - task_key: Ride_Summary
           depends_on:
             - task_key: Bike_Data_Cleaning
@@ -47,4 +41,13 @@ resources:
       parameters:
         - name: catalog
           default: ${var.catalog}
+      environments:
+        - environment_key: Default
+          spec:
+            environment_version: "4"
+        - environment_key: Python_Wheel_environment
+          spec:
+            dependencies:
+              - ../../dist/*.whl
+            environment_version: "4"
       performance_target: PERFORMANCE_OPTIMIZED
