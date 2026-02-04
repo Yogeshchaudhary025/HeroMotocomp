@@ -24,6 +24,12 @@ variables:
   catalog:
     default: __unset__
 
+
+# artifacts:
+#   heromotocomp:
+#     type: whl
+#     build: python -m build --wheel
+
 targets:
   dev:
     mode: development
@@ -45,10 +51,8 @@ targets:
       catalog: org_test
       env_directory: TEST
     permissions:
-      - service_principal_name: 315a747e-ccec-4cfb-9c9b-99d849a1d0b3
+      - user_name: yogesh025yc@gmail.com
         level: CAN_MANAGE
-    run_as:
-       service_principal_name: 315a747e-ccec-4cfb-9c9b-99d849a1d0b3
   prod:
     presets:
       source_linked_deployment : false
@@ -61,7 +65,5 @@ targets:
       catalog: org_prod
       env_directory: PROD
     permissions:
-      - service_principal_name: 315a747e-ccec-4cfb-9c9b-99d849a1d0b3
+      - user_name: yogesh025yc@gmail.com
         level: CAN_MANAGE
-    run_as:
-       service_principal_name: 315a747e-ccec-4cfb-9c9b-99d849a1d0b3
