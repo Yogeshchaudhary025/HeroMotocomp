@@ -31,7 +31,7 @@ jobs:
           # write out the profile (here called "TEST")
           cat <<EOF > ~/.databrickscfg
           [TEST]
-          host = your-databricks-workspace-url
+          host = https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
           account_id = ${{ secrets.ACCOUNT_ID }}
           client_id = ${{ secrets.CLIENT_ID }}
           client_secret = ${{ secrets.CLIENT_SECRET }}
@@ -69,7 +69,7 @@ jobs:
           # write out the profile (here called "PROD")
           cat <<EOF > ~/.databrickscfg
           [PROD]
-          host = your-databricks-workspace-url
+          host = https://dbc-e3f9f6a4-4aca.cloud.databricks.com/
           account_id = ${{ secrets.ACCOUNT_ID }}
           client_id = ${{ secrets.CLIENT_ID }}
           client_secret = ${{ secrets.CLIENT_SECRET }}
